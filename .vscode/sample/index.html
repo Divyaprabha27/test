@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <script>
+        var myHTTP = new XMLHttpRequest(); 
+        
+        myHTTP.open('GET', 'https://restcountries.com/v3.1/all');
+        myHTTP.send();
+        myHTTP.onload = function() {
+            var data = JSON.parse(request.response);
+            var result = data.filter((element)=>{
+            return element.region === "Asia";
+        }
+       
+    </script>
+</head>
+<body>
+    <div id = "result"></div>
+    <div id = "users"></div>
+</body>
+</html>
