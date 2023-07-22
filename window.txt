@@ -1,0 +1,8 @@
+Difference between window screen and document
+----------------------------------------------
+
+The JavaScript window object sits at the top of the JavaScript Object hierarchy and represents the browser window.This window object has the majority of the properties like length, innerWidth, innerHeight, name, if it has been closed, its parents, and more.
+The window object represents the current browsing context . It holds things like window.location, window.history, window.screen, window.status, or the window.document .
+
+The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. When an HTML document is loaded into a web browser , it becomes a document object.
+Screen is a small information object about physical screen dimensions . It can be used to display screen width, height, colorDepth, pixelDepth etc. It is not mandatory to write window prefix with screen object. It can be written without window prefix.
