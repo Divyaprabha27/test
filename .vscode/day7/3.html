@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <h1>Print the following details name, capital, flag using forEach function
+    </h1>
+    <script>
+        var http = new XMLHttpRequest();
+        http.open("GET", "https://restcountries.com/v3.1/all");
+        http.send();
+
+        http.onload = () => {
+        if (http.status === 200) {
+          var restcountries = JSON.parse(http.response);
+
+          restcountries.forEach((country) => {
+            console.log("Name: ", country.name.official);
+            console.log("Capital: ", country.capital);
+            
+            console.log("Flag: ", country.flag);
+          });
+        }
+        else {
+            console.log("ERROR");
+        }
+    };
+    </script>
+</body>
+</html>

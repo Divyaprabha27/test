@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <h1>Print the country which uses US Dollars as currency.
+    </h1>
+    <script>
+        var http = new XMLHttpRequest();
+        http.open("GET", "https://restcountries.com/v3.1/all");
+        http.send();
+
+        http.onload = function() {
+          var restcountries = JSON.parse(http.response);
+
+          const dollar = restcountries.filter((currencies) => {
+            if (currencies === "USD") {
+              return true;
+            }
+          });
+          console.log(dollar);
+        };
+    </script>
+</body>
+</html>

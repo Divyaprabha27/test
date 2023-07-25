@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <h1>Print the total population of countries using reduce function
+    </h1>
+    <script>
+        var http = new XMLHttpRequest();
+        http.open("GET", "https://restcountries.com/v3.1/all");
+        http.send();
+
+        http.onload = function()  {
+          var restcountries = JSON.parse(http.response);
+
+          const population = restcountries.reduce((acc,current) => {
+            return acc + current.population;            
+          },0);
+          console.log(population);
+    };
+    </script>
+</body>
+</html>
